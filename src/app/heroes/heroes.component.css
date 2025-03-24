@@ -2,27 +2,32 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  max-width: 450px; /* Ancho máximo para la lista */
+  width: 100%; /* Ocupa todo el ancho disponible hasta el máximo */
+  margin: 0 auto; /* Centra la lista */
 }
+
 .heroes li {
   position: relative;
   cursor: pointer;
+  margin-bottom: 8px; /* Espacio entre elementos de la lista */
 }
 
 .heroes li:hover {
-  left: .1em;
+  transform: translateX(2px); /* Más moderno que usar left */
+  transition: transform 0.2s;
 }
 
 .heroes a {
   color: #333;
   text-decoration: none;
   background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
+  padding: 10px; /* Padding uniforme */
   border-radius: 4px;
-  display: block;
+  display: flex; /* Usamos flexbox para alinear el badge y el nombre */
+  align-items: center;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .heroes a:hover {
@@ -36,18 +41,21 @@
 }
 
 .heroes .badge {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: small;
   color: white;
-  padding: 0.8em 0.7em 0 0.7em;
   background-color: #405061;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  min-width: 16px;
-  text-align: right;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
+  width: 30px; /* Ancho fijo para todos los badges */
+  height: 30px; /* Altura fija para todos los badges */
+  text-align: center;
+  margin-right: 10px;
+  border-radius: 4px;
+  /* Eliminamos position relative, left y top para un alineamiento más preciso con flexbox */
+}
+
+/* Añadimos un estilos para el nombre para alinearlo correctamente */
+.hero-name {
+  flex: 1; /* Ocupa el espacio restante */
 }

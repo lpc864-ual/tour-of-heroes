@@ -1,24 +1,117 @@
-/* HeroDetailComponent's private CSS styles */
+/* HeroDetailComponent's enhanced CSS styles */
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #3f51b5;
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.detail-item {
+  margin-bottom: 20px;
+}
+
+.id-field {
+  margin-bottom: 25px;
+  padding: 10px;
+  background-color: #e8eaf6;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #3f51b5;
+}
+
 label {
-    color: #435960;
-    font-weight: bold;
-  }
-  input {
-    font-size: 1em;
-    padding: .5rem;
-  }
-  button {
-    margin-top: 20px;
-    background-color: #eee;
-    padding: 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  button:hover {
-    background-color: #cfd8dc;
-  }
-  button:disabled {
-    background-color: #eee;
-    color: #ccc;
-    cursor: auto;
-  }
+  color: #3f51b5;
+  font-weight: bold;
+  margin-right: 15px;
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+}
+
+input {
+  font-size: 1em;
+  padding: 10px;
+  width: 250px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+}
+
+.hero-power {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-power li {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #e8eaf6;
+  border-radius: 6px;
+  transition: transform 0.2s;
+}
+
+.hero-power li:hover {
+  transform: translateX(5px);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+button {
+  background-color: #3f51b5;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #303f9f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  background-color: #c5cae9;
+  color: #9fa8da;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}

@@ -1,11 +1,23 @@
-<div *ngIf="hero">
+<div *ngIf="hero" class="detail-container">
+  <h2>{{hero.name | uppercase}} Details</h2>
 
-    <h2>{{hero.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{hero.id}}</div>
-    <div>
-      <label for="hero-name">Hero name: </label>
-      <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
-    </div>
-    <button type="button" (click)="goBack()">go back</button>
-  
+  <div class="detail-item id-field">
+    <span>id: {{hero.id}}</span>
   </div>
+
+  <div class="detail-item">
+    <label for="hero-name">Hero name:</label>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+  </div>
+
+  <ul class="hero-power">
+    <li *ngFor="let power of hero.powers; let i = index">
+      <label for="power-name-{{i}}">Power name:</label>
+      <input id="power-name-{{i}}" #powerInput [(ngModel)]="hero.powers[i]" placeholder="name" (input)="onPowerChange(i)">
+    </li>
+  </ul>
+
+  <div class="button-container">
+    <button type="button" (click)="goBack()">go back</button>
+  </div>
+</div>
