@@ -1,38 +1,41 @@
+.hero-add {
+  margin-bottom: 1rem;
+}
+
 .heroes {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  max-width: 450px; /* Ancho máximo para la lista */
-  width: 100%; /* Ocupa todo el ancho disponible hasta el máximo */
-  margin: 0 auto; /* Centra la lista */
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .heroes li {
   position: relative;
-  cursor: pointer;
-  margin-bottom: 8px; /* Espacio entre elementos de la lista */
-}
-
-.heroes li:hover {
-  transform: translateX(2px); /* Más moderno que usar left */
-  transition: transform 0.2s;
+  margin-bottom: 8px;
+  /* Quitamos el cursor: pointer del li, lo aplicaremos solo al enlace */
 }
 
 .heroes a {
   color: #333;
   text-decoration: none;
   background-color: #EEE;
-  padding: 10px; /* Padding uniforme */
+  padding: 10px;
   border-radius: 4px;
-  display: flex; /* Usamos flexbox para alinear el badge y el nombre */
+  display: flex;
   align-items: center;
-  width: 100%;
+  width: calc(100% - 40px); /* Restamos el ancho del botón y su margen */
   box-sizing: border-box;
+  cursor: pointer; /* Movemos el cursor pointer aquí */
 }
 
+/* Modificamos el hover para que solo afecte al enlace, no al botón */
 .heroes a:hover {
   color: #2c3a41;
   background-color: #e6e6e6;
+  transform: translateX(2px);
+  transition: transform 0.2s;
 }
 
 .heroes a:active {
@@ -47,15 +50,33 @@
   font-size: small;
   color: white;
   background-color: #405061;
-  width: 30px; /* Ancho fijo para todos los badges */
-  height: 30px; /* Altura fija para todos los badges */
+  width: 30px;
+  height: 30px;
   text-align: center;
   margin-right: 10px;
   border-radius: 4px;
-  /* Eliminamos position relative, left y top para un alineamiento más preciso con flexbox */
 }
 
-/* Añadimos un estilos para el nombre para alinearlo correctamente */
 .hero-name {
-  flex: 1; /* Ocupa el espacio restante */
+  flex: 1;
+}
+
+.hero-delete {
+  font-size: small;
+  color: black;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 4px;
+  margin-left: 5px;
+  margin-top: 10px;
+  background-color: #EEE;
+  border: none;
+  cursor: pointer; /* Agregamos cursor pointer al botón */
+}
+
+/* Añadimos un hover específico para el botón de eliminar */
+.hero-delete:hover {
+  background-color: #f88;
+  color: white;
 }
