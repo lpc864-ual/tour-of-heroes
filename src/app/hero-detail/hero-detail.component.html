@@ -10,6 +10,14 @@
     <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
   </div>
 
+  <div class="hero-image" *ngIf="hero.imageUrl">
+    <img [src]="hero.imageUrl" alt="{{hero.name}}" class="hero-portrait">
+  </div>
+  <div class="hero-image" *ngIf="!hero.imageUrl">
+    <img src="assets/images/hero-placeholder.png" alt="No image available" class="hero-portrait">
+  </div>
+
+
   <ul class="hero-power">
     <li *ngFor="let power of hero.powers; let i = index">
       <label for="power-name-{{i}}">Power name:</label>
